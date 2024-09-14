@@ -1,10 +1,10 @@
 ---
 title: "ML-KEM Post-Quantum Key Agreement for TLS 1.3"
-abbrev: connolly-tls-mlkem-key-agreement
+abbrev: connolly-tls-mlkem
 category: info
 
-docname: draft-connolly-tls-mlkem-key-agreement-latest
-submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
+docname: draft-connolly-tls-mlkem-latest
+submissiontype: IETF
 number:
 date:
 consensus: true
@@ -61,8 +61,8 @@ informative:
 
 --- abstract
 
-This memo defines ML-KEM-768 and ML-KEM-1024 as a standalone
-`NamedGroup` for use in TLS 1.3 to achieve post-quantum key agreement.
+This memo defines ML-KEM-512, ML-KEM-768, and ML-KEM-1024 as a standalone `NamedGroup`s for use in
+TLS 1.3 to achieve post-quantum key agreement.
 
 --- middle
 
@@ -280,9 +280,28 @@ computational binding properties for KEMs were formalized in {{CDM23}}.
 
 # IANA Considerations
 
-This document requests/registers two new entries to the TLS Named Group
+This document requests/registers three new entries to the TLS Named Group
 (or Supported Group) registry, according to the procedures in {{Section
 6 of tlsiana}}.
+
+ Value:
+ : 0x0512 (please)
+
+ Description:
+ : MLKEM512
+
+ DTLS-OK:
+ : Y
+
+ Recommended:
+ : N
+
+ Reference:
+ : This document
+
+ Comment:
+ : FIPS 203 version of ML-KEM-512
+
 
  Value:
  : 0x0768 (please)
@@ -327,5 +346,4 @@ This document requests/registers two new entries to the TLS Named Group
 # Acknowledgments
 {:numbered="false"}
 
-Thanks to Douglas Stebila for consultation on the
-draft-ietf-tls-hybrid-design design.
+Thanks to Douglas Stebila for consultation on the draft-ietf-tls-hybrid-design design.
